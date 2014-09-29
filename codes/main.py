@@ -15,10 +15,10 @@ def mult_choice():
     while not_done:
         prompt = ("Enter question number and wrong answer for multiple choice"
                   "(i.e. 1c or 5a) \n")
-        if prompt == 'done':
-            return
+        feedback_num = input(prompt)
+        if feedback_num == 'done':
+            not_done = False
         else:
-            feedback_num = input(prompt)
             try:
                 feedback_content = solution[feedback_num]
                 add_feedback_to_file(SECTION, LAB, S_NAME, feedback_num,
@@ -43,6 +43,9 @@ def add_feedback_to_file(section, lab, s_name, feedback_num, feedback_content):
     Example:
         >>> add_feedback(3, 1, "Guang Yang", "1d", "Hahahaha noob")
     """
+    file_name = generate_file_name(section, lab, s_name)
+    with open(file_name, 'a') as f:
+        f.write("\n-- {0} --\n{1}".format(feedback_num, feedback_content))
 
 
 def new_file(section, lab, s_name):
@@ -70,4 +73,4 @@ if __name__ == "__main__":
     LAB = 1
     S_NAME = "Guang Yang"  # input("Student Name: ")
     new_file(SECTION, LAB, S_NAME)
-    # mult_choice()
+    mult_choice()
