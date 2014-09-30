@@ -2,7 +2,7 @@
         @mktime:        9/25/2014
         @description:   main file to do the semi-automated grading for 203
 """
-from solution_mult_choice import *  # NOQA
+from solution import *  # NOQA
 import os.path
 
 
@@ -12,6 +12,13 @@ def mult_choice(file_name, score):
     while the user input is not "done", we ask user for 1) question number and
     2) error number. We combine these two strings into a dictionary key to pull
     data from the solutions
+
+    Args:
+        file_name (str):        name of the file being edited
+        score (int):            current score for the student
+
+    Returns:
+        score (int):            score after taking points off for wrong answers
     """
     add_section_name_to_file(file_name, 1)
     not_done = True
@@ -20,10 +27,11 @@ def mult_choice(file_name, score):
 
     while not_done:
         question_num = input("(multiple choice) Enter question number"
-                             "(or type done): ")
+                             " (or type done): ")
         if question_num == 'done':
             not_done = False
             print("Exiting multiple choice section")
+            return score
         else:
             error_num = input("(multiple choice) Enter error number: ")
             dict_key = "{0}{1}".format(question_num, error_num)
@@ -37,8 +45,43 @@ def mult_choice(file_name, score):
                 print("Not a valid dictionary key")
 
 
-def data_analysis():
-    """ automating the process for grading data analysis """
+def data_analysis(file_name, score):
+    """ automating the process for grading data analysis
+
+    Args:
+        file_name (str):        name of the file being edited
+        score (int):            current score for the student
+
+    Returns:
+        score (int):            score after taking points off for wrong answers
+    """
+    add_section_name_to_file(file_name, 2)
+    not_done = True
+    solution_lab = solution_data_analysis(LAB)
+    while not_done:
+        question_num = input("(data analysis) Enter question number"
+                             "(or type 'done'): ")
+        if question_num == 'done':
+            not_done = False
+            print("Exiting data analysis section")
+            return score
+        else:
+            solution_question = solution_lab[question_num]
+            error_key = input("Enter error key (or type 'show'): ")
+            if error_key == 'show':
+                # ToDo: pretty print this
+                print(solution_question)
+            user_mode = input("please choose edit mode"
+                              " ('pull' or 'edit'): ")
+            if user_mode == 'pull':
+                feedback_content = solution_question[error_key][0]
+                points_off = solution_question[error_key][1]
+                add_feedback_to_file(file_name, question_num,
+                                     feedback_content, points_off)
+                score = score - points_off
+            # ToDo: implement branch for editing and saving feedback
+            else:
+                pass
 
 
 def add_feedback_to_file(file_name, question_num, feedback_content, points_off):
@@ -104,4 +147,5 @@ if __name__ == "__main__":
     score = 100
 
     new_file(SECTION, LAB, S_NAME, FILE_NAME)
-    score = mult_choice(FILE_NAME, score)
+    # score = mult_choice(FILE_NAME, score)
+    score = data_analysis(FILE_NAME, score)
