@@ -8,4 +8,5 @@ __pycache__
 *.Rmd
 *.zip
 *.xls
-
+*.tsv
+*.docx
