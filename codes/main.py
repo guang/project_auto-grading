@@ -147,5 +147,5 @@ if __name__ == "__main__":
     score = 100
 
     new_file(SECTION, LAB, S_NAME, FILE_NAME)
-    # score = mult_choice(FILE_NAME, score)
-    score = data_analysis(FILE_NAME, score)
+    score = mult_choice(FILE_NAME, score)
+    # score = data_analysis(FILE_NAME, score)
