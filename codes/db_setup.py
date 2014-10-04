@@ -14,10 +14,10 @@ def new_solutions_db():
 
     Schema:
         MC (multiple choice):
-            lab number (int):           1,2,3,4
-            question number (int):      1,2,3,4,5,...
-            error_name (text):           'a','e',...
-            feedback (text):             "The correct answer is A Teehee"
+            lab_numr (int):             1,2,3,4
+            question num (int):         1,2,3,4,5,...
+            error_name (text):          'a','e',...
+            feedback (text):            "The correct answer is A Teehee"
 
         TS (test selection):
             lab number (int):           1,2,3,4
@@ -28,9 +28,10 @@ def new_solutions_db():
         DA (data analysis):
             lab number (int):           1,2,3,4
             question number (int):      1,2,3,4,5,...
-            part_name (text):            'a','c',...
-            error_name (text):           'no_preprocess','wrong_test',...
-            feedback (text)              "The correct answer should Teehee"
+            part_name (text):           'a','c',...
+            error_name (text):          'no_preprocess','wrong_test',...
+            feedback (text)             "The correct answer should Teehee"
+            points_off (int):           1,2,3,4,5,...
     """
     pass
 
@@ -638,7 +639,9 @@ def solution_mult_choice_lab4():
     return mc_sol
 
 
-def solution_mult(lab):
+def solution_mult_choice(lab):
+    """ generates solutions for multiple choice for specified lab
+    """
     if lab == 1:
         mc_sol = solution_mult_choice_lab1()
     elif lab == 2:
@@ -668,10 +671,9 @@ def write_mc_to_db(lab):
         lab:            lab number for which the solution is to be written
     """
     con = lite.connect('solutions.db')
-    mc_sol = solution_mult(lab)
+    mc_sol = solution_mult_choice(lab)
 
     with con:
-        con.row_factory = lite.Row      # dictionary cursor
         cur = con.cursor()
         for i in range(len(mc_sol)):
             cur.execute("INSERT INTO MC VALUES{0}".format(mc_sol[i]))
