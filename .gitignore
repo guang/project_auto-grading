@@ -10,3 +10,4 @@ __pycache__
 *.xls
 *.tsv
 *.docx
+*.db
