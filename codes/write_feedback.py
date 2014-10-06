@@ -3,6 +3,7 @@
         @description:   functions used to write the feedback file for students
 """
 import os.path
+import textwrap
 
 
 def generate_file_name(section, lab, s_name):
@@ -34,7 +35,7 @@ def add_section_name_to_file(file_name, section_name):
     section_dict = {'mc': "\n\nMultiple Choices\n",
                     'ts': "\n\nTest Selection\n",
                     'da': "\n\nData Analysis\n",
-                    'ac': "\n\nAdditional Comments\n",}
+                    'ac': "\n\nAdditional Comments\n"}
     with open(file_name, 'a') as f:
         f.write(section_dict[section_name])
 
@@ -56,6 +57,9 @@ def add_feedback_to_file(file_name, question_num, feedback_content, points_off):
     Example:
         >>> add_feedback("sec1_lab1_yang-guang", "1d", "Hahahaha noob", 5)
     """
+    feedback_content = textwrap.wrap(feedback_content)
     with open(file_name, 'a') as f:
-        f.write("\n-- question {0} (-{2} points) --"
-                "\n{1}\n".format(question_num, feedback_content, points_off))
+        f.write("\n-- question {0} (-{1} points) --"
+                "\n".format(question_num, points_off))
+        for i in feedback_content:
+            f.write("{0}\n".format(i))

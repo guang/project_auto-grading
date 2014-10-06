@@ -34,15 +34,12 @@ def mult_choice(file_name, score):
         else:
             error_name = input("(multiple choice) Enter error name: ")
             dict_key = "{0}{1}".format(question_num, error_name)
-            try:
-                feedback_content = get_mc_feedback(LAB, question_num,
-                                                   error_name)
-                add_feedback_to_file(file_name, question_num,
-                                     feedback_content, points_off)
-                print("Successfully added feedback {0}".format(dict_key))
-                score = score - 5
-            except KeyError:
-                print("Not a valid dictionary key")
+            feedback_content = get_mc_feedback(LAB, question_num,
+                                               error_name)
+            add_feedback_to_file(file_name, question_num,
+                                 feedback_content, points_off)
+            print("Successfully added feedback {0}".format(dict_key))
+            score = score - 5
 
 
 def data_analysis(file_name, score):
@@ -57,7 +54,6 @@ def data_analysis(file_name, score):
     """
     add_section_name_to_file(file_name, 'da')
     not_done = True
-    solution_lab = solution_data_analysis(LAB)
     while not_done:
         question_num = input("(data analysis) Enter question number"
                              "(or type 'done'): ")
@@ -66,22 +62,47 @@ def data_analysis(file_name, score):
             print("Exiting data analysis section")
             return score
         else:
-            solution_question = solution_lab[question_num]
-            error_key = input("Enter error key (or type 'show'): ")
-            if error_key == 'show':
-                # ToDo: pretty print this
-                print(solution_question)
-            user_mode = input("please choose edit mode"
-                              " ('pull' or 'edit'): ")
-            if user_mode == 'pull':
-                feedback_content = solution_question[error_key][0]
-                points_off = solution_question[error_key][1]
-                add_feedback_to_file(file_name, question_num,
-                                     feedback_content, points_off)
-                score = score - points_off
-            # ToDo: implement branch for editing and saving feedback
+            part_name = input("Enter part number: ")
+            feedback_list = show_da_feedback(LAB, question_num, part_name)
+            if feedback_list:
+                for i in feedback_list:
+                    print("\nerror_name: {0}\nfeedback: {1}".format(i[0], i[1]))
             else:
-                pass
+                print("no feedbacks currently exist for this question/part")
+            error_name = input("what's the error name? ")
+            user_mode = input("(pull) from existing or write (new) entry: ")
+            if user_mode == 'pull':
+                feedback_and_points = pull_da_feedback(LAB, question_num,
+                                                       part_name, error_name)
+                feedback = feedback_and_points[0]
+                points_off = feedback_and_points[1]
+                question_and_part = "{0}{1}".format(question_num, part_name)
+                add_feedback_to_file(file_name, question_and_part, feedback,
+                                     points_off)
+                score = score - points_off
+                print("Successfully added feedback for question {0}{1}"
+                      "".format(question_num, part_name))
+            elif user_mode == 'new':
+                is_save = False
+                while is_save != 'yes':
+                    mode_new_msg = ("-- recording answer for lab {0} question "
+                                    "{1} part {2}: {3} --\n"
+                                    "".format(LAB, question_num, part_name,
+                                              error_name))
+                    feedback_new = input(mode_new_msg)
+                    points_off_new = input("how many points to be taken off? ")
+                    is_save = input("Save the answer to database (yes)? ")
+                    if is_save == "yes":
+                        question_and_part = "{0}{1}".format(question_num,
+                                                            part_name)
+                        add_da_feedback(LAB, question_num, part_name,
+                                        error_name, feedback_new,
+                                        points_off_new)
+                        add_feedback_to_file(file_name, question_and_part,
+                                             feedback_new, points_off_new)
+
+            else:
+                print("action was not specified, exiting")
 
 
 if __name__ == "__main__":
@@ -93,5 +114,5 @@ if __name__ == "__main__":
     score = 100
 
     new_file(SECTION, LAB, S_NAME, FILE_NAME)
-    score = mult_choice(FILE_NAME, score)
-    # score = data_analysis(FILE_NAME, score)
+    # score = mult_choice(FILE_NAME, score)
+    score = data_analysis(FILE_NAME, score)

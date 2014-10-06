@@ -14,8 +14,8 @@ def new_solutions_db():
 
     Schema:
         MC (multiple choice):
-            lab_numr (int):             1,2,3,4
-            question num (int):         1,2,3,4,5,...
+            lab_num (int):             1,2,3,4
+            question_num (int):         1,2,3,4,5,...
             error_name (text):          'a','e',...
             feedback (text):            "The correct answer is A Teehee"
 
@@ -26,11 +26,11 @@ def new_solutions_db():
             feedback (text):             "The correct answer is A Teehee"
 
         DA (data analysis):
-            lab number (int):           1,2,3,4
-            question number (int):      1,2,3,4,5,...
+            lab_num (int):             1,2,3,4
+            question_num (int):         1,2,3,4,5,...
             part_name (text):           'a','c',...
-            error_name (text):          'no_preprocess','wrong_test',...
-            feedback (text)             "The correct answer should Teehee"
+            error_name (text):          'a','e',...
+            feedback (text):            "The correct answer is A Teehee"
             points_off (int):           1,2,3,4,5,...
     """
     pass
@@ -656,13 +656,15 @@ def solution_mult_choice(lab):
     return mc_sol
 
 
+def solution_data_analysis_lab1():
+
+
+
 def solution_data_analysis(lab):
     """ solution bank for data analysis section for all 4 labs
 
-    Many layers: 1) lab number (lab1_sol), 2) question_key (2a),
-    3) error_key (wrong_date), 4) actual content and points off in a tuple
     """
-    pass
+
 
 
 def write_mc_to_db(lab):
