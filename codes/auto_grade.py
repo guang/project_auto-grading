@@ -90,29 +90,48 @@ def data_analysis(file_name, score):
                                     "".format(LAB, question_num, part_name,
                                               error_name))
                     feedback_new = input(mode_new_msg)
-                    points_off_new = input("how many points to be taken off? ")
+                    points_off_new = int(input("how many points to be "
+                                               "taken off? "))
                     is_save = input("Save the answer to database (yes)? ")
                     if is_save == "yes":
                         question_and_part = "{0}{1}".format(question_num,
                                                             part_name)
-                        add_da_feedback(LAB, question_num, part_name,
-                                        error_name, feedback_new,
-                                        points_off_new)
+                        flag = add_da_feedback(LAB, question_num, part_name,
+                                               error_name, feedback_new,
+                                               points_off_new)
                         add_feedback_to_file(file_name, question_and_part,
                                              feedback_new, points_off_new)
-
+                        print(flag)
+                        score = score - points_off_new
             else:
                 print("action was not specified, exiting")
 
 
+def additional_comments(file_name):
+    """ automating the process for adding additional comments
+
+    Args:
+        file_name (str):        name of the file being edited
+    """
+    add_section_name_to_file(file_name, 'ac')
+    is_save = False
+    while is_save != 'yes':
+        feedback = input("-- recording additional comments --\n")
+        is_save = input("Save the answer (yes)? ")
+        if is_save == 'yes':
+            add_feedback_to_file(file_name, 'feedback', feedback, 0)
+
+
 if __name__ == "__main__":
-    SECTION = 1
+    SECTION = 5
     LAB = 1
     GRADER = "Guang Yang (gy8@berkeley.edu)"
-    S_NAME = "Guang Yang"  # input("Student Name: ")
+    S_NAME = input("Student Name: ")
     FILE_NAME = generate_file_name(SECTION, LAB, S_NAME)
     score = 100
 
-    new_file(SECTION, LAB, S_NAME, FILE_NAME)
-    # score = mult_choice(FILE_NAME, score)
+    new_file(SECTION, LAB, S_NAME, FILE_NAME, GRADER)
+    score = mult_choice(FILE_NAME, score)
     score = data_analysis(FILE_NAME, score)
+    additional_comments(FILE_NAME)
+    add_final_score(FILE_NAME, score)

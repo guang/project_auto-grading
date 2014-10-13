@@ -13,11 +13,11 @@ def generate_file_name(section, lab, s_name):
                                               s_name[0])
 
 
-def new_file(section, lab, s_name, file_name):
-    """ create new file based on student information (if not already there) """
-    new_file_boilerplate = "Name: {0}\nSection: {1}\nLab: {2}\n".format(s_name,
-                                                                        lab,
-                                                                        section)
+def new_file(section, lab, s_name, file_name, grader):
+    """ create new file based on student information (if not already there)
+    """
+    new_file_boilerplate = ("Name: {0}\nSection: {1}\nLab: {2}\nGrader: {3}\n"
+                            "".format(s_name, lab, section, grader))
     if os.path.isfile(file_name):
         return
     else:
@@ -63,3 +63,10 @@ def add_feedback_to_file(file_name, question_num, feedback_content, points_off):
                 "\n".format(question_num, points_off))
         for i in feedback_content:
             f.write("{0}\n".format(i))
+
+
+def add_final_score(file_name, score):
+    """ add final score
+    """
+    with open(file_name, 'a') as f:
+        f.write("\nYour final score is {0}".format(score))

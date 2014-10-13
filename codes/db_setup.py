@@ -69,7 +69,7 @@ def solution_mult_choice_lab1():
     mc_sol.append((1, 1, "c", "The correct answer is E. Nominal variables "
                    "do not impose order, however here there is indeed order "
                    "from less to more"))
-    mc_sol.append((1, 1, "1d", "The correct answer is E. Since ratio "
+    mc_sol.append((1, 1, "d", "The correct answer is E. Since ratio "
                    "variables are also continuous, it can't be the case here"))
 
     # lab1 q2
@@ -150,20 +150,27 @@ def solution_mult_choice_lab1():
     mc_sol.append((1, 6, "d", "The correct answer is B. "
                    "Not the central limit theorem"))
 
-    # q7
-    mc_sol.append((1, 7, "7b", "The correct answer is A. "
+    # lab1 q7
+    mc_sol.append((1, 7, "a", "The correct answer is F. "
+                   "This is very subtle but the sample standard deviation is "
+                   "actually not an unbiased estimator of the population "
+                   "standard deviation (because of taking the square root). "
+                   "This implies that the sample standard deviation could move "
+                   "up or down in expectation with increasing sample size. "))
+    mc_sol.append((1, 7, "b", "The correct answer is F. "
                    "Standard error of the mean is defined as s/sqrt(n) where n "
                    "is the sample size. So it will get smaller"))
-    mc_sol.append((1, 7, "7c", "The correct answer is A. "
-                   "It should actually be larger"))
-    mc_sol.append((1, 7, "7d", "The correct answer is A. "
+    mc_sol.append((1, 7, "c", "The correct answer is F. "
+                   "Notice that this is the distribution of the variable, not "
+                   "the statistic. Therefore, we expect the standard deviation "
+                   "to stay roughly constant with sample size, not decrease "
+                   "to zero."))
+    mc_sol.append((1, 7, "d", "The correct answer is F. "
                    "Sampling doesn't alter inherent population distribution"))
-    mc_sol.append((1, 7, "7e", "The correct answer is A. "
+    mc_sol.append((1, 7, "e", "The correct answer is F. "
                    "That's not what central limit theorem tells us"))
-    mc_sol.append((1, 7, "7f", "The correct answer is A. "
-                   ""))
 
-    # q8
+    # lab1 q8
     mc_sol.append((1, 8, "a", "The correct answer is D. "
                    "All three statistics are 30"))
     mc_sol.append((1, 8, "b", "The correct answer is D. "
@@ -173,7 +180,7 @@ def solution_mult_choice_lab1():
     mc_sol.append((1, 8, "e", "The correct answer is D. "
                    "There's no errors so sure it's 0"))
 
-    # q9
+    # lab1 q9
     mc_sol.append((1, 9, "a", "The correct answer is B. "
                    "Using Bayes theorem we can write P(H|A) = P(H) * P(A|H)/"
                    "P(A) Now we know that P(H)=0.01 (given), P(A|H)=1 (trick "
@@ -208,8 +215,8 @@ def solution_mult_choice_lab2():
     """
     mc_sol = []
     # lab1 q1
-    mc_sol.append((1, 1, 'a', "The correct answer is E. The variable is "
-                   "discrete, so it can'tbe interval"))
+    mc_sol.append((1, 1, 'a', "The correct answer is E. Remember that "
+                   "intervals have different lengths"))
     mc_sol.append((1, 1, "b", "The correct answer is E. Dichotomous variables "
                    "are nomial with only categories or levels, which is not "
                    "the case here"))
@@ -656,15 +663,13 @@ def solution_mult_choice(lab):
     return mc_sol
 
 
-def solution_data_analysis_lab1():
-
+# def solution_data_analysis_lab1():
 
 
 def solution_data_analysis(lab):
     """ solution bank for data analysis section for all 4 labs
 
     """
-
 
 
 def write_mc_to_db(lab):
