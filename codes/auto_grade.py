@@ -22,7 +22,7 @@ def mult_choice(file_name, score):
     """
     add_section_name_to_file(file_name, 'mc')
     not_done = True
-    points_off = 5
+    points_off = 4
 
     while not_done:
         question_num = input("(multiple choice) Enter question number"

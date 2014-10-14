@@ -61,8 +61,8 @@ def solution_mult_choice_lab1():
     """
     mc_sol = []
     # lab1 q1
-    mc_sol.append((1, 1, 'a', "The correct answer is E. The variable is "
-                   "discrete, so it can'tbe interval"))
+    mc_sol.append((1, 1, 'a', "The correct answer is E. Remember that "
+                   "intervals have different lengths"))
     mc_sol.append((1, 1, "b", "The correct answer is E. Dichotomous variables "
                    "are nomial with only categories or levels, which is not "
                    "the case here"))
@@ -145,26 +145,21 @@ def solution_mult_choice_lab1():
     mc_sol.append((1, 6, "a", "The correct answer is B. "
                    "This is law of large numbers"))
     mc_sol.append((1, 6, "c", "The correct answer is B. "
-                   "Well this is kind of obvious you don't need a theorem to "
-                   "know this"))
+                   "This is a known fact, CLT is more specific."))
     mc_sol.append((1, 6, "d", "The correct answer is B. "
                    "Not the central limit theorem"))
 
     # lab1 q7
     mc_sol.append((1, 7, "a", "The correct answer is F. "
-                   "This is very subtle but the sample standard deviation is "
-                   "actually not an unbiased estimator of the population "
-                   "standard deviation (because of taking the square root). "
-                   "This implies that the sample standard deviation could move "
-                   "up or down in expectation with increasing sample size. "))
+                   "Variance should actually stay constant with sample size"))
     mc_sol.append((1, 7, "b", "The correct answer is F. "
                    "Standard error of the mean is defined as s/sqrt(n) where n "
                    "is the sample size. So it will get smaller"))
     mc_sol.append((1, 7, "c", "The correct answer is F. "
-                   "Notice that this is the distribution of the variable, not "
-                   "the statistic. Therefore, we expect the standard deviation "
-                   "to stay roughly constant with sample size, not decrease "
-                   "to zero."))
+                   "Notice that this is the distribution of the variable, "
+                   "not the statistic. Therefore, we expect the standard "
+                   "deviation to stay roughly constant with sample size, "
+                   "not decrease to zero"))
     mc_sol.append((1, 7, "d", "The correct answer is F. "
                    "Sampling doesn't alter inherent population distribution"))
     mc_sol.append((1, 7, "e", "The correct answer is F. "

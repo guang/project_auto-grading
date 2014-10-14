@@ -17,7 +17,7 @@ def new_file(section, lab, s_name, file_name, grader):
     """ create new file based on student information (if not already there)
     """
     new_file_boilerplate = ("Name: {0}\nSection: {1}\nLab: {2}\nGrader: {3}\n"
-                            "".format(s_name, lab, section, grader))
+                            "".format(s_name, section, lab, grader))
     if os.path.isfile(file_name):
         return
     else:
