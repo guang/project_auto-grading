@@ -209,19 +209,10 @@ def solution_mult_choice_lab2():
 
     """
     mc_sol = []
-    # lab1 q1
-    mc_sol.append((1, 1, 'a', "The correct answer is E. Remember that "
-                   "intervals have different lengths"))
-    mc_sol.append((1, 1, "b", "The correct answer is E. Dichotomous variables "
-                   "are nomial with only categories or levels, which is not "
-                   "the case here"))
-    mc_sol.append((1, 1, "c", "The correct answer is E. Nominal variables "
-                   "do not impose order, however here there is indeed order "
-                   "from less to more"))
-    mc_sol.append((1, 1, "1d", "The correct answer is E. Since ratio "
-                   "variables are also continuous, it can't be the case here"))
+    # lab2 q1
+    mc_sol
 
-    # lab1 q2
+    # lab2 q2
     mc_sol.append((1, 2, "b", "The correct answer is A. Dichotomous is binary"
                    ", not an interval variable"))
     mc_sol.append((1, 2, "c", "The correct answer is A. This is not clear "
@@ -231,7 +222,7 @@ def solution_mult_choice_lab2():
     mc_sol.append((1, 2, "e", "The correct answer is A. It's not clear what's "
                    "conceptual vs operational"))
 
-    # lab1 q3
+    # lab2 q3
     mc_sol.append((1, 3, "a", "The correct answer is D. Not true - std "
                    "indeed gets 'stretched' by outliers"))
     mc_sol.append((1, 3, "b", "The correct answer is D. This was a little "
@@ -249,7 +240,7 @@ def solution_mult_choice_lab2():
     mc_sol.append((1, 3, "c", "The correct answer is D. Take the constant "
                    "to be 0 and it's very clear this is wrong"))
 
-    # lab1 q4
+    # lab2 q4
     mc_sol.append((1, 4, "a", "The correct answer is B. This answer doesn't "
                    "make sense as there is no quota"))
     mc_sol.append((1, 4, "c", "The correct answer is B. Where is the social "
@@ -261,7 +252,7 @@ def solution_mult_choice_lab2():
     mc_sol.append((1, 4, "f", "The correct answer is B. What's systematic "
                    "about it?"))
 
-    # lab1 q5
+    # lab2 q5
     mc_sol.append((1, 5, "a", "The correct answer is C. "
                    "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
                    "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
@@ -290,7 +281,7 @@ def solution_mult_choice_lab2():
                    "we have then Y ~ N(50,sigma^2/100 and follow the above "
                    "calculations we arrive at the same answer"))
 
-    # lab1 q6
+    # lab2 q6
     mc_sol.append((1, 6, "a", "The correct answer is B. "
                    "This is law of large numbers"))
     mc_sol.append((1, 6, "c", "The correct answer is B. "
