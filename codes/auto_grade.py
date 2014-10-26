@@ -4,14 +4,15 @@
 """
 from write_feedback import *    # NOQA
 from db_connect import *        # NOQA
+from write_summary import *     # NOQA
 
 
 def mult_choice(file_name, score):
     """ automating the process for grading multiple choices
 
-    while the user input is not "done", we ask user for 1) question number and
-    2) error number. We combine these two strings into a dictionary key to pull
-    data from the solutions
+    User is asked to provide a string (no space) of answers from student. We
+    then loop through each of the answers, trying to pull the feedback from our
+    solutions database (unless answer is correct, in which case we just skip).
 
     Args:
         file_name (str):        name of the file being edited
@@ -21,25 +22,53 @@ def mult_choice(file_name, score):
         score (int):            score after taking points off for wrong answers
     """
     add_section_name_to_file(file_name, 'mc')
-    not_done = True
     points_off = 4
 
-    while not_done:
-        question_num = input("(multiple choice) Enter question number"
-                             " (or type done): ")
-        if question_num == 'done':
-            not_done = False
-            print("Exiting multiple choice section")
-            return score
-        else:
-            error_name = input("(multiple choice) Enter error name: ")
+    answers_raw = input("(multiple choice) Enter answer sequence: ").lower()
+    answers_list = list(answers_raw)
+    print("Processing {0} answers".format(len(answers_list)))
+
+    for question_num, error_name in enumerate(answers_list):
+        try:
+            feedback_content = get_mc_feedback(LAB, question_num, error_name)
+            add_feedback_to_file(file_name, question_num, feedback_content,
+                                 points_off)
             dict_key = "{0}{1}".format(question_num, error_name)
-            feedback_content = get_mc_feedback(LAB, question_num,
-                                               error_name)
-            add_feedback_to_file(file_name, question_num,
-                                 feedback_content, points_off)
             print("Successfully added feedback {0}".format(dict_key))
-            score = score - 5
+        except TypeError:
+            pass
+
+
+def test_selection(file_name, score):
+    """ automating the process for grading test selection
+
+    User is asked to provide a string (no space) of answers from student. We
+    then loop through each of the answers, trying to pull the feedback from our
+    solutions database (unless answer is correct, in which case we just skip).
+
+    Args:
+        file_name (str):        name of the file being edited
+        score (int):            current score for the student
+
+    Returns:
+        score (int):            score after taking points off for wrong answers
+    """
+    add_section_name_to_file(file_name, 'mc')
+    points_off = 5
+
+    answers_raw = input("(multiple choice) Enter answer sequence: ").lower()
+    answers_list = list(answers_raw)
+    print("Processing {0} answers".format(len(answers_list)))
+
+    for question_num, error_name in enumerate(answers_list):
+        try:
+            feedback_content = get_mc_feedback(LAB, question_num, error_name)
+            add_feedback_to_file(file_name, question_num, feedback_content,
+                                 points_off)
+            dict_key = "{0}{1}".format(question_num, error_name)
+            print("Successfully added feedback {0}".format(dict_key))
+        except TypeError:
+            pass
 
 
 def data_analysis(file_name, score):
@@ -123,7 +152,7 @@ def additional_comments(file_name):
 
 
 if __name__ == "__main__":
-    SECTION = 5
+    SECTION = 1
     LAB = 1
     GRADER = "Guang Yang (gy8@berkeley.edu)"
     S_NAME = input("Student Name: ")
@@ -135,3 +164,4 @@ if __name__ == "__main__":
     score = data_analysis(FILE_NAME, score)
     additional_comments(FILE_NAME)
     add_final_score(FILE_NAME, score)
+    write_summary_score(LAB, SECTION, S_NAME, score)
