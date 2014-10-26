@@ -9,8 +9,8 @@ import textwrap
 def generate_file_name(section, lab, s_name):
     """ generate file name (string) based on student information """
     s_name = s_name.lower().split(" ")  # [FirstName, LastName]
-    return "sec{0}_lab{1}_{2}-{3}.txt".format(section, lab, s_name[1],
-                                              s_name[0])
+    return "sec{0}_lab{1}_{2}-{3}.txt".format(section, lab, s_name[0],
+                                              s_name[1])
 
 
 def new_file(section, lab, s_name, file_name, grader):
