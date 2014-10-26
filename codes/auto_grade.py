@@ -53,16 +53,16 @@ def test_selection(file_name, score):
     Returns:
         score (int):            score after taking points off for wrong answers
     """
-    add_section_name_to_file(file_name, 'mc')
+    add_section_name_to_file(file_name, 'ts')
     points_off = 5
 
-    answers_raw = input("(multiple choice) Enter answer sequence: ").lower()
+    answers_raw = input("(test selection) Enter answer sequence: ").lower()
     answers_list = list(answers_raw)
     print("Processing {0} answers".format(len(answers_list)))
 
     for question_num, error_name in enumerate(answers_list):
         try:
-            feedback_content = get_mc_feedback(LAB, question_num, error_name)
+            feedback_content = get_ts_feedback(LAB, question_num, error_name)
             add_feedback_to_file(file_name, question_num, feedback_content,
                                  points_off)
             dict_key = "{0}{1}".format(question_num, error_name)
@@ -162,6 +162,7 @@ if __name__ == "__main__":
     new_file(SECTION, LAB, S_NAME, FILE_NAME, GRADER)
     score = mult_choice(FILE_NAME, score)
     score = data_analysis(FILE_NAME, score)
+    score = test_selection(FILE_NAME, score)
     additional_comments(FILE_NAME)
     add_final_score(FILE_NAME, score)
     write_summary_score(LAB, SECTION, S_NAME, score)

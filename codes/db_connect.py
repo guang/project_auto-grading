@@ -27,6 +27,27 @@ def get_mc_feedback(lab_num, question_num, error_name):
     return feedback[0]
 
 
+def get_ts_feedback(lab_num, question_num, error_name):
+    """ get feedback from database based on lab, question and the error
+
+    Args:
+        lab_num (int):          lab number
+        question_num (int):     question number
+        error_name (str):       error name
+
+    Returns:
+        feedback (str):         raw feedback in string (no line breaks)
+    """
+    con = lite.connect('solutions.db')
+
+    with con:
+        cur = con.cursor()
+        cur.execute("SELECT feedback FROM TS WHERE lab_num=? AND question_num=?"
+                    " AND error_name=?", (lab_num, question_num, error_name))
+        feedback = cur.fetchone()
+    return feedback[0]
+
+
 def show_da_feedback(lab_num, question_num, part_name):
     """ show all feedbacks for a part of question on a lab.
 
