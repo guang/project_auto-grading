@@ -29,14 +29,15 @@ and error type), the program then writes the individualized feedbacks and calcul
 final score to a .txt file with general information about the student and assignment.
 
 After grading, if something need to be changed (the feedback in the database was poorly
-worded or wrong), this grader program enables you to make postmortem changes to every
+worded or just wrong), this grader program enables you to make postmortem changes to every
 student's individual feedback .txt file using regex to search and replace.
 
 ### Dependencies
 This program is developed in Python 3.4 and does not provide compatibility to Python 2.
+
 (time to start using Python 3 :sunglasses:)
 
-[Python](https://www.python.org): 3.x
+- [Python](https://www.python.org): 3.x
 
 ### Usage
 
@@ -48,7 +49,7 @@ in `auto_grade.py`. If everything looks like you can just run
 python3 auto_grade.py
 ```
 
-and start grading away "ghost:
+and start grading away :ghost:
 
 
 

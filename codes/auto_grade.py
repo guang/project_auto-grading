@@ -28,7 +28,8 @@ def mult_choice(file_name, score):
     answers_list = list(answers_raw)
     print("Processing {0} answers".format(len(answers_list)))
 
-    for question_num, error_name in enumerate(answers_list):
+    for ind, error_name in enumerate(answers_list):
+        question_num = ind + 1
         try:
             feedback_content = get_mc_feedback(LAB, question_num, error_name)
             add_feedback_to_file(file_name, question_num, feedback_content,
@@ -60,7 +61,8 @@ def test_selection(file_name, score):
     answers_list = list(answers_raw)
     print("Processing {0} answers".format(len(answers_list)))
 
-    for question_num, error_name in enumerate(answers_list):
+    for ind, error_name in enumerate(answers_list):
+        question_num = ind + 1
         try:
             feedback_content = get_ts_feedback(LAB, question_num, error_name)
             add_feedback_to_file(file_name, question_num, feedback_content,
@@ -153,7 +155,7 @@ def additional_comments(file_name):
 
 if __name__ == "__main__":
     SECTION = 1
-    LAB = 1
+    LAB = 2
     GRADER = "Guang Yang (gy8@berkeley.edu)"
     S_NAME = input("Student Name: ")
     FILE_NAME = generate_file_name(SECTION, LAB, S_NAME)
@@ -161,8 +163,8 @@ if __name__ == "__main__":
 
     new_file(SECTION, LAB, S_NAME, FILE_NAME, GRADER)
     score = mult_choice(FILE_NAME, score)
-    score = data_analysis(FILE_NAME, score)
     score = test_selection(FILE_NAME, score)
+    score = data_analysis(FILE_NAME, score)
     additional_comments(FILE_NAME)
     add_final_score(FILE_NAME, score)
     write_summary_score(LAB, SECTION, S_NAME, score)
