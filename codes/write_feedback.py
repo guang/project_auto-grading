@@ -4,6 +4,7 @@
 """
 import os.path
 import textwrap
+from random import randrange
 
 
 def generate_file_name(section, lab, s_name):
@@ -69,4 +70,15 @@ def add_final_score(file_name, score):
     """ add final score
     """
     with open(file_name, 'a') as f:
-        f.write("\nYour final score is {0}".format(score))
+        f.write("\n\nYour final score is {0}".format(score))
+
+
+def add_goodjob_to_file(file_name):
+    """ Add (randomized) good job words to the section
+    (when everything is correct)
+    """
+    goodjob_list = ["Good work!", "Very good!", "Good job!", "Nice work!"]
+    i_goodjob = randrange(0, 4)
+    with open(file_name, 'a') as f:
+        f.write("{}".format(goodjob_list[i_goodjob]))
+

@@ -23,6 +23,7 @@ def mult_choice(file_name, score):
     """
     add_section_name_to_file(file_name, 'mc')
     points_off = 4
+    perfect_score = score
 
     answers_raw = input("(multiple choice) Enter answer sequence: ").lower()
     answers_list = list(answers_raw)
@@ -36,8 +37,12 @@ def mult_choice(file_name, score):
                                  points_off)
             dict_key = "{0}{1}".format(question_num, error_name)
             print("Successfully added feedback {0}".format(dict_key))
+            score -= points_off
         except TypeError:
             pass
+    if score == perfect_score:
+        add_goodjob_to_file(file_name)
+    return score
 
 
 def test_selection(file_name, score):
@@ -56,6 +61,7 @@ def test_selection(file_name, score):
     """
     add_section_name_to_file(file_name, 'ts')
     points_off = 5
+    perfect_score = score
 
     answers_raw = input("(test selection) Enter answer sequence: ").lower()
     answers_list = list(answers_raw)
@@ -69,8 +75,12 @@ def test_selection(file_name, score):
                                  points_off)
             dict_key = "{0}{1}".format(question_num, error_name)
             print("Successfully added feedback {0}".format(dict_key))
+            score -= points_off
         except TypeError:
             pass
+    if score == perfect_score:
+        add_goodjob_to_file(file_name)
+    return score
 
 
 def data_analysis(file_name, score):
@@ -83,6 +93,8 @@ def data_analysis(file_name, score):
     Returns:
         score (int):            score after taking points off for wrong answers
     """
+    perfect_score = score
+
     add_section_name_to_file(file_name, 'da')
     not_done = True
     while not_done:
@@ -90,6 +102,8 @@ def data_analysis(file_name, score):
                              "(or type 'done'): ")
         if question_num == 'done':
             not_done = False
+            if score == perfect_score:
+                add_goodjob_to_file(file_name)
             print("Exiting data analysis section")
             return score
         else:
@@ -115,7 +129,7 @@ def data_analysis(file_name, score):
                       "".format(question_num, part_name))
             elif user_mode == 'new':
                 is_save = False
-                while is_save != 'yes':
+                while is_save not in ('y', 'n'):
                     mode_new_msg = ("-- recording answer for lab {0} question "
                                     "{1} part {2}: {3} --\n"
                                     "".format(LAB, question_num, part_name,
@@ -123,16 +137,17 @@ def data_analysis(file_name, score):
                     feedback_new = input(mode_new_msg)
                     points_off_new = int(input("how many points to be "
                                                "taken off? "))
-                    is_save = input("Save the answer to database (yes)? ")
-                    if is_save == "yes":
+                    is_save = input("Save the answer to database (y/n/c)? ")
+                    if is_save in ('y', 'n'):
                         question_and_part = "{0}{1}".format(question_num,
                                                             part_name)
-                        flag = add_da_feedback(LAB, question_num, part_name,
-                                               error_name, feedback_new,
-                                               points_off_new)
+                        if is_save == 'y':
+                            flag = add_da_feedback(LAB, question_num, part_name,
+                                                   error_name, feedback_new,
+                                                   points_off_new)
+                            print(flag)
                         add_feedback_to_file(file_name, question_and_part,
                                              feedback_new, points_off_new)
-                        print(flag)
                         score = score - points_off_new
             else:
                 print("action was not specified, exiting")
@@ -154,7 +169,7 @@ def additional_comments(file_name):
 
 
 if __name__ == "__main__":
-    SECTION = 1
+    SECTION = 2
     LAB = 2
     GRADER = "Guang Yang (gy8@berkeley.edu)"
     S_NAME = input("Student Name: ")
