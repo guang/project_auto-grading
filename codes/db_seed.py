@@ -607,140 +607,303 @@ def solution_mult_choice_lab3():
 
     """
     mc_sol = []
-    # lab1 q1
-    mc_sol.append((1, 1, 'a', "The correct answer is E. The variable is "
-                   "discrete, so it can'tbe interval"))
-    mc_sol.append((1, 1, "b", "The correct answer is E. Dichotomous variables "
-                   "are nomial with only categories or levels, which is not "
-                   "the case here"))
-    mc_sol.append((1, 1, "c", "The correct answer is E. Nominal variables "
-                   "do not impose order, however here there is indeed order "
-                   "from less to more"))
-    mc_sol.append((1, 1, "1d", "The correct answer is E. Since ratio "
-                   "variables are also continuous, it can't be the case here"))
+    # lab3 q1
+    mc_sol.append((3, 1, 'a',
+                   "The correct answer is B. "
+                   "Notice that the experimenters had no control over the bug "
+                   "and they are simply measuring the differences in "
+                   "productivity level between the two groups (the nature of "
+                   "the occurrence resembles random assignment)."))
+    mc_sol.append((3, 1, "c",
+                   "The correct answer is B. "
+                   "Notice that the experimenters had no control over the bug "
+                   "and they are simply measuring the differences in "
+                   "productivity level between the two groups (the nature of "
+                   "the occurrence resembles random assignment)."))
+    mc_sol.append((3, 1, "d",
+                   "The correct answer is B. "
+                   "Notice that the experimenters had no control over the bug "
+                   "and they are simply measuring the differences in "
+                   "productivity level between the two groups (the nature of "
+                   "the occurrence resembles random assignment)."))
+    mc_sol.append((3, 1, "e",
+                   "The correct answer is B. "
+                   "Notice that the experimenters had no control over the bug "
+                   "and they are simply measuring the differences in "
+                   "productivity level between the two groups (the nature of "
+                   "the occurrence resembles random assignment)."))
 
-    # lab1 q2
-    mc_sol.append((1, 2, "b", "The correct answer is A. Dichotomous is binary"
-                   ", not an interval variable"))
-    mc_sol.append((1, 2, "c", "The correct answer is A. This is not clear "
-                   "from just using a binary variable"))
-    mc_sol.append((1, 2, "d", "The correct answer is A. This is not clear "
-                   "from just using a binary variable"))
-    mc_sol.append((1, 2, "e", "The correct answer is A. It's not clear what's "
-                   "conceptual vs operational"))
+    # lab3 q2
+    mc_sol.append((3, 2, "b",
+                   "The correct answer is A. "
+                   "The key feature here is random assignment, which makes "
+                   "this a true experiment.  The fact that the sample isn’t "
+                   "random doesn’t change the type of experiment, it just "
+                   "calls into question the external validity of the study. "
+                   "A quasi-experiment would imply that there is no random "
+                   "assignment.  Finally, it’s clear from the time-structure "
+                   "that this is a pretest-posttest design."))
+    mc_sol.append((3, 2, "c",
+                   "The correct answer is A. "
+                   "The key feature here is random assignment, which makes "
+                   "this a true experiment.  The fact that the sample isn’t "
+                   "random doesn’t change the type of experiment, it just "
+                   "calls into question the external validity of the study. "
+                   "A quasi-experiment would imply that there is no random "
+                   "assignment.  Finally, it’s clear from the time-structure "
+                   "that this is a pretest-posttest design."))
+    mc_sol.append((3, 2, "d",
+                   "The correct answer is A. "
+                   "The key feature here is random assignment, which makes "
+                   "this a true experiment.  The fact that the sample isn’t "
+                   "random doesn’t change the type of experiment, it just "
+                   "calls into question the external validity of the study. "
+                   "A quasi-experiment would imply that there is no random "
+                   "assignment.  Finally, it’s clear from the time-structure "
+                   "that this is a pretest-posttest design."))
+    mc_sol.append((3, 2, "e",
+                   "The correct answer is A. "
+                   "The key feature here is random assignment, which makes "
+                   "this a true experiment.  The fact that the sample isn’t "
+                   "random doesn’t change the type of experiment, it just "
+                   "calls into question the external validity of the study. "
+                   "A quasi-experiment would imply that there is no random "
+                   "assignment.  Finally, it’s clear from the time-structure "
+                   "that this is a pretest-posttest design."))
 
-    # lab1 q3
-    mc_sol.append((1, 3, "a", "The correct answer is D. Not true - std "
-                   "indeed gets 'stretched' by outliers"))
-    mc_sol.append((1, 3, "b", "The correct answer is D. This was a little "
-                   "tricky - the problem here is the use of 'any population'. "
-                   "Let's demonstrate this by a counterexample. Say we have "
-                   "two distributions, X which is normal distribution with "
-                   "mean mu and standard deviation sigma, and Y which is a "
-                   "constant distribution over the support of a singleton 5. "
-                   "For X, it's clear that sampling a point from a normal "
-                   "distribution has about 68%% chance of falling within one "
-                   "standard deviation of the mean. However, since Y is a "
-                   "singleton, the mean is 5 and variance is 0. As a result, "
-                   "The chance of your sample falling within one standard "
-                   "deviation of the mean is 100%%."))
-    mc_sol.append((1, 3, "c", "The correct answer is D. Take the constant "
-                   "to be 0 and it's very clear this is wrong"))
+    # lab3 q3
+    mc_sol.append((3, 3, "a",
+                   "The correct answer is B. "
+                   "One of the main motivations for using parametric tests is "
+                   "the high power they have.  One way to explain this is "
+                   "that they don’t throw away as much information as "
+                   "non-parametric tests.  Another way to see this is that "
+                   "we’re trying to estimate something about our population, "
+                   "say the mean or some other parameter.  In a non-parametric "
+                   "test, we begin by assuming almost nothing about the "
+                   "population, then we try to narrow down our model using "
+                   "the data.  In a parametric test, we begin with a specific "
+                   "class of models the population can belong to, then narrow "
+                   "these down to an even smaller set using our data, so the "
+                   "resulting estimate is more precise.  Hence, we can "
+                   "usually expect higher power."))
+    mc_sol.append((3, 3, "c",
+                   "The correct answer is B. "
+                   "One of the main motivations for using parametric tests is "
+                   "the high power they have.  One way to explain this is "
+                   "that they don’t throw away as much information as "
+                   "non-parametric tests.  Another way to see this is that "
+                   "we’re trying to estimate something about our population, "
+                   "say the mean or some other parameter.  In a non-parametric "
+                   "test, we begin by assuming almost nothing about the "
+                   "population, then we try to narrow down our model using "
+                   "the data.  In a parametric test, we begin with a specific "
+                   "class of models the population can belong to, then narrow "
+                   "these down to an even smaller set using our data, so the "
+                   "resulting estimate is more precise.  Hence, we can "
+                   "usually expect higher power."))
+    mc_sol.append((3, 3, "d",
+                   "The correct answer is B. "
+                   "One of the main motivations for using parametric tests is "
+                   "the high power they have.  One way to explain this is "
+                   "that they don’t throw away as much information as "
+                   "non-parametric tests.  Another way to see this is that "
+                   "we’re trying to estimate something about our population, "
+                   "say the mean or some other parameter.  In a non-parametric "
+                   "test, we begin by assuming almost nothing about the "
+                   "population, then we try to narrow down our model using "
+                   "the data.  In a parametric test, we begin with a specific "
+                   "class of models the population can belong to, then narrow "
+                   "these down to an even smaller set using our data, so the "
+                   "resulting estimate is more precise.  Hence, we can "
+                   "usually expect higher power."))
+    mc_sol.append((3, 3, "e",
+                   "The correct answer is B. "
+                   "One of the main motivations for using parametric tests is "
+                   "the high power they have.  One way to explain this is "
+                   "that they don’t throw away as much information as "
+                   "non-parametric tests.  Another way to see this is that "
+                   "we’re trying to estimate something about our population, "
+                   "say the mean or some other parameter.  In a non-parametric "
+                   "test, we begin by assuming almost nothing about the "
+                   "population, then we try to narrow down our model using "
+                   "the data.  In a parametric test, we begin with a specific "
+                   "class of models the population can belong to, then narrow "
+                   "these down to an even smaller set using our data, so the "
+                   "resulting estimate is more precise.  Hence, we can "
+                   "usually expect higher power."))
+    mc_sol.append((3, 3, "f",
+                   "The correct answer is B. "
+                   "One of the main motivations for using parametric tests is "
+                   "the high power they have.  One way to explain this is "
+                   "that they don’t throw away as much information as "
+                   "non-parametric tests.  Another way to see this is that "
+                   "we’re trying to estimate something about our population, "
+                   "say the mean or some other parameter.  In a non-parametric "
+                   "test, we begin by assuming almost nothing about the "
+                   "population, then we try to narrow down our model using "
+                   "the data.  In a parametric test, we begin with a specific "
+                   "class of models the population can belong to, then narrow "
+                   "these down to an even smaller set using our data, so the "
+                   "resulting estimate is more precise.  Hence, we can "
+                   "usually expect higher power."))
 
-    # lab1 q4
-    mc_sol.append((1, 4, "a", "The correct answer is B. This answer doesn't "
-                   "make sense as there is no quota"))
-    mc_sol.append((1, 4, "c", "The correct answer is B. Where is the social "
-                   "network?"))
-    mc_sol.append((1, 4, "d", "The correct answer is B. You need "
-                   "probabilities to select clusters"))
-    mc_sol.append((1, 4, "e", "The correct answer is B. But the prompt said "
-                   "random"))
-    mc_sol.append((1, 4, "f", "The correct answer is B. What's systematic "
-                   "about it?"))
+    # lab3 q4
+    mc_sol.append((3, 4, "a",
+                   "The correct answer is C. "
+                   "Because the students who are posting puppies and kittens "
+                   "are the same population, dependent t-test here would be "
+                   "more appropriate (In this case the posting of puppies "
+                   "and kittens are like time1 and time2). Because we have "
+                   "a large sample size (>30), you can apply the CLT to gain "
+                   "normality of sample means, so the dependent t-test is "
+                   "appropriate."))
+    mc_sol.append((3, 4, "b",
+                   "The correct answer is C. "
+                   "Because the students who are posting puppies and kittens "
+                   "are the same population, dependent t-test here would be "
+                   "more appropriate (In this case the posting of puppies "
+                   "and kittens are like time1 and time2). Because we have "
+                   "a large sample size (>30), you can apply the CLT to gain "
+                   "normality of sample means, so the dependent t-test is "
+                   "appropriate."))
+    mc_sol.append((3, 4, "d",
+                   "The correct answer is C. "
+                   "Because the students who are posting puppies and kittens "
+                   "are the same population, dependent t-test here would be "
+                   "more appropriate (In this case the posting of puppies "
+                   "and kittens are like time1 and time2). Because we have "
+                   "a large sample size (>30), you can apply the CLT to gain "
+                   "normality of sample means, so the dependent t-test is "
+                   "appropriate."))
+    mc_sol.append((3, 4, "e",
+                   "The correct answer is C. "
+                   "Because the students who are posting puppies and kittens "
+                   "are the same population, dependent t-test here would be "
+                   "more appropriate (In this case the posting of puppies "
+                   "and kittens are like time1 and time2). Because we have "
+                   "a large sample size (>30), you can apply the CLT to gain "
+                   "normality of sample means, so the dependent t-test is "
+                   "appropriate."))
+    mc_sol.append((3, 4, "f",
+                   "The correct answer is C. "
+                   "Because the students who are posting puppies and kittens "
+                   "are the same population, dependent t-test here would be "
+                   "more appropriate (In this case the posting of puppies "
+                   "and kittens are like time1 and time2). Because we have "
+                   "a large sample size (>30), you can apply the CLT to gain "
+                   "normality of sample means, so the dependent t-test is "
+                   "appropriate."))
 
-    # lab1 q5
-    mc_sol.append((1, 5, "a", "The correct answer is C. "
-                   "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
-                   "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
-                   "s P((X-50)/sigma > (70-50)/sigma), which is P(Z>(20/sigma)"
-                   " which is then 1 - phi(20/sigma), where phi is the cdf of "
-                   "the standard normal."
-                   "Similarly if we let Y be 1/100 sum(X_j), j from 1 to 100 "
-                   "we have then Y ~ N(50,sigma^2/100 and follow the above "
-                   "calculations we arrive at the same answer"))
-    mc_sol.append((1, 5, "b", "The correct answer is C. "
-                   "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
-                   "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
-                   "s P((X-50)/sigma > (70-50)/sigma), which is P(Z>(20/sigma)"
-                   " which is then 1 - phi(20/sigma), where phi is the cdf of "
-                   "the standard normal."
-                   "Similarly if we let Y be 1/100 sum(X_j), j from 1 to 100 "
-                   "we have then Y ~ N(50,sigma^2/100 and follow the above "
-                   "calculations we arrive at the same answer"))
-    mc_sol.append((1, 5, "d", "The correct answer is C. "
-                   "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
-                   "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
-                   "s P((X-50)/sigma > (70-50)/sigma), which is P(Z>(20/sigma)"
-                   " which is then 1 - phi(20/sigma), where phi is the cdf of "
-                   "the standard normal."
-                   "Similarly if we let Y be 1/100 sum(X_j), j from 1 to 100 "
-                   "we have then Y ~ N(50,sigma^2/100 and follow the above "
-                   "calculations we arrive at the same answer"))
+    # lab3 q5
+    mc_sol.append((3, 5, "a",
+                   "The correct answer is D. "
+                   "We know that P(wear plaid AND drink beer) = P(wear plaid) "
+                   "* P(drink beer given wear plaid). However since we have "
+                   "the independence assumption, we can simplify "
+                   "P(drink beer given wear plaid) = P(drink beer), which "
+                   "gives us 42 people when you consider the sample size"))
+    mc_sol.append((3, 5, "b",
+                   "The correct answer is D. "
+                   "We know that P(wear plaid AND drink beer) = P(wear plaid) "
+                   "* P(drink beer given wear plaid). However since we have "
+                   "the independence assumption, we can simplify "
+                   "P(drink beer given wear plaid) = P(drink beer), which "
+                   "gives us 42 people when you consider the sample size"))
+    mc_sol.append((3, 5, "c",
+                   "The correct answer is D. "
+                   "We know that P(wear plaid AND drink beer) = P(wear plaid) "
+                   "* P(drink beer given wear plaid). However since we have "
+                   "the independence assumption, we can simplify "
+                   "P(drink beer given wear plaid) = P(drink beer), which "
+                   "gives us 42 people when you consider the sample size"))
+    mc_sol.append((3, 5, "e",
+                   "The correct answer is D. "
+                   "We know that P(wear plaid AND drink beer) = P(wear plaid) "
+                   "* P(drink beer given wear plaid). However since we have "
+                   "the independence assumption, we can simplify "
+                   "P(drink beer given wear plaid) = P(drink beer), which "
+                   "gives us 42 people when you consider the sample size"))
+    mc_sol.append((3, 5, "f",
+                   "The correct answer is D. "
+                   "We know that P(wear plaid AND drink beer) = P(wear plaid) "
+                   "* P(drink beer given wear plaid). However since we have "
+                   "the independence assumption, we can simplify "
+                   "P(drink beer given wear plaid) = P(drink beer), which "
+                   "gives us 42 people when you consider the sample size"))
 
-    # lab1 q6
-    mc_sol.append((1, 6, "a", "The correct answer is B. "
-                   "This is law of large numbers"))
-    mc_sol.append((1, 6, "c", "The correct answer is B. "
-                   "Well this is kind of obvious you don't need a theorem to "
-                   "know this"))
-    mc_sol.append((1, 6, "d", "The correct answer is B. "
-                   "Not the central limit theorem"))
+    # lab3 q6
+    mc_sol.append((3, 6, "a",
+                   "The correct answer is C. "
+                   "Post-hoc adjustments (like Bonferonni) should not be run "
+                   "if there is a theoretical reason to suspect that December "
+                   "is different than all other months. However, if there is "
+                   "no such theoretical basis and the researcher is merely "
+                   "exploring the data to see if there are differences "
+                   "between the months, then some sort of post-hoc corrections "
+                   "should be conducted"))
+    mc_sol.append((3, 6, "b",
+                   "The correct answer is C. "
+                   "Post-hoc adjustments (like Bonferonni) should not be run "
+                   "if there is a theoretical reason to suspect that December "
+                   "is different than all other months. However, if there is "
+                   "no such theoretical basis and the researcher is merely "
+                   "exploring the data to see if there are differences "
+                   "between the months, then some sort of post-hoc corrections "
+                   "should be conducted"))
+    mc_sol.append((3, 6, "d",
+                   "The correct answer is C. "
+                   "Post-hoc adjustments (like Bonferonni) should not be run "
+                   "if there is a theoretical reason to suspect that December "
+                   "is different than all other months. However, if there is "
+                   "no such theoretical basis and the researcher is merely "
+                   "exploring the data to see if there are differences "
+                   "between the months, then some sort of post-hoc corrections "
+                   "should be conducted"))
 
-    # q7
-    mc_sol.append((1, 7, "7b", "The correct answer is A. "
-                   "Standard error of the mean is defined as s/sqrt(n) where n "
-                   "is the sample size. So it will get smaller"))
-    mc_sol.append((1, 7, "7c", "The correct answer is A. "
-                   "It should actually be larger"))
-    mc_sol.append((1, 7, "7d", "The correct answer is A. "
-                   "Sampling doesn't alter inherent population distribution"))
-    mc_sol.append((1, 7, "7e", "The correct answer is A. "
-                   "That's not what central limit theorem tells us"))
-    mc_sol.append((1, 7, "7f", "The correct answer is A. "
-                   ""))
+    # lab3 q7
+    mc_sol.append((3, 7, "a",
+                   "The correct answer is B. "
+                   "Because of the non-random sampling of the population, "
+                   "we introduce sampling bias (as opposed to selection "
+                   "bias), which puts external validity in question."))
+    mc_sol.append((3, 7, "c",
+                   "The correct answer is B. "
+                   "Because of the non-random sampling of the population, "
+                   "we introduce sampling bias (as opposed to selection "
+                   "bias), which puts external validity in question."))
+    mc_sol.append((3, 7, "d",
+                   "The correct answer is B. "
+                   "Because of the non-random sampling of the population, "
+                   "we introduce sampling bias (as opposed to selection "
+                   "bias), which puts external validity in question."))
+    mc_sol.append((3, 7, "e",
+                   "The correct answer is B. "
+                   "Because of the non-random sampling of the population, "
+                   "we introduce sampling bias (as opposed to selection "
+                   "bias), which puts external validity in question."))
+    mc_sol.append((3, 7, "f",
+                   "The correct answer is B. "
+                   "Because of the non-random sampling of the population, "
+                   "we introduce sampling bias (as opposed to selection "
+                   "bias), which puts external validity in question."))
 
     # q8
-    mc_sol.append((1, 8, "a", "The correct answer is D. "
-                   "All three statistics are 30"))
-    mc_sol.append((1, 8, "b", "The correct answer is D. "
-                   "Yup it's a constant distribution, which is unimodal"))
-    mc_sol.append((1, 8, "c", "The correct answer is D. "
-                   "Yup constant distributions have 0 variance/std"))
-    mc_sol.append((1, 8, "e", "The correct answer is D. "
-                   "There's no errors so sure it's 0"))
-
-    # q9
-    mc_sol.append((1, 9, "a", "The correct answer is B. "
-                   "Using Bayes theorem we can write P(H|A) = P(H) * P(A|H)/"
-                   "P(A) Now we know that P(H)=0.01 (given), P(A|H)=1 (trick "
-                   "coin has two heads so it always flips head), P(A)=0.51 "
-                   "(trick coin has 2 heads)."))
-    mc_sol.append((1, 9, "c", "The correct answer is B. "
-                   "Using Bayes theorem we can write P(H|A) = P(H) * P(A|H)/"
-                   "P(A) Now we know that P(H)=0.01 (given), P(A|H)=1 (trick "
-                   "coin has two heads so it always flips head), P(A)=0.51 "
-                   "(trick coin has 2 heads)."))
-    mc_sol.append((1, 9, "d", "The correct answer is B. "
-                   "Using Bayes theorem we can write P(H|A) = P(H) * P(A|H)/"
-                   "P(A) Now we know that P(H)=0.01 (given), P(A|H)=1 (trick "
-                   "coin has two heads so it always flips head), P(A)=0.51 "
-                   "(trick coin has 2 heads)."))
-    mc_sol.append((1, 9, "e", "The correct answer is B. "
-                   "Using Bayes theorem we can write P(H|A) = P(H) * P(A|H)/"
-                   "P(A) Now we know that P(H)=0.01 (given), P(A|H)=1 (trick "
-                   "coin has two heads so it always flips head), P(A)=0.51 "
-                   "(trick coin has 2 heads)."))
+    mc_sol.append((1, 8, "a",
+                   "The correct answer is B. "
+                   "Since we're evaluating the effect size, we would like to "
+                   "include standard deviation in our consideration, such as "
+                   "Cohen's d."))
+    mc_sol.append((1, 8, "c",
+                   "The correct answer is B. "
+                   "Since we're evaluating the effect size, we would like to "
+                   "include standard deviation in our consideration, such as "
+                   "Cohen's d."))
+    mc_sol.append((1, 8, "d",
+                   "The correct answer is B. "
+                   "Since we're evaluating the effect size, we would like to "
+                   "include standard deviation in our consideration, such as "
+                   "Cohen's d."))
 
     return mc_sol
 
@@ -946,21 +1109,151 @@ def solution_test_selection_lab3():
 
     """
     ts_sol = []
-    # lab2 q1
-    ts_sol.append((2, 1, 'a', "The correct answer is B."
-                   "Here we want to assess the equality of variances, which is "
-                   "exactly what Levenes does."))
-    ts_sol.append((2, 1, 'c', "The correct answer is B."
-                   "Here we want to assess the equality of variances, which is "
-                   "exactly what Levenes does."))
+    # lab3 q1
+    ts_sol.append((3, 1, 'a',
+                   "The correct answer is D. "
+                   "Notice that the income variable is not continuous "
+                   "(segmented into ordinal ranges) so we would prefer to use "
+                   "a non-parametric test"))
+    ts_sol.append((3, 1, 'b',
+                   "The correct answer is D. "
+                   "Here you’re comparing means between the two categories "
+                   "so correlation isn’t gonna be helpful"))
+    ts_sol.append((3, 1, 'c',
+                   "The correct answer is D. "
+                   "Recall that signed rank test is for when the data are "
+                   "paired - which is not the case here, so the rank-sum "
+                   "is a better choice"))
+    ts_sol.append((3, 1, 'e',
+                   "The correct answer is D. "
+                   "A chi-square could be used since income isn’t an interval "
+                   "variable, but it throws away a lot more information than "
+                   "the rank sum test.  The rank sum test also gets at the "
+                   "question of which group has higher income, and this is "
+                   "harder to interpret from a significant chi-square result."))
+    ts_sol.append((3, 1, 'f',
+                   "The correct answer is D. "
+                   "Here we have only two groups, rank-sum would be a better "
+                   "approach."))
 
-    # lab2 q2
-    ts_sol.append((2, 2, "b", "The correct answer is A. "
-                   "This is used to determine whether a given set of data "
-                   "follows a normal distribution"))
-    ts_sol.append((2, 2, "c", "The correct answer is A. "
-                   "This is used to determine whether a given set of data "
-                   "follows a normal distribution"))
+    # lab3 q2
+    ts_sol.append((3, 2, "a",
+                   "The correct answer is D. "
+                   "Notice that the country music is a categorical variable "
+                   "with 7 different categories thus it’s best to use ANOVA"))
+    ts_sol.append((3, 2, "b",
+                   "The correct answer is D. "
+                   "Notice that the country music is a categorical variable "
+                   "with 7 different categories thus it’s best to use ANOVA"))
+    ts_sol.append((3, 2, "c",
+                   "The correct answer is D. "
+                   "Notice that the country music is a categorical variable "
+                   "with 7 different categories thus it’s best to use ANOVA"))
+    ts_sol.append((3, 2, "e",
+                   "The correct answer is D. "
+                   "Notice that the country music is a categorical variable "
+                   "with 7 different categories thus it’s best to use ANOVA"))
+
+    # lab3 q3
+    ts_sol.append((3, 3, "b",
+                   "The correct answer is A. "
+                   "After cleaning the data to arrive at the observations "
+                   "with the conditions sex=='Male' and relig=='Catholic' "
+                   "(and the female counterpart), "
+                   "we see that there are 130/203 for male/female catholics. "
+                   "This sample size is large enough (>30) to use the t-test "
+                   "thanks to CLT. Also notice that the t-test assumes the "
+                   "means of the samples are normally distributed; it does "
+                   "not assume that the population (the hist() we see) is "
+                   "normally distributed."))
+    ts_sol.append((3, 3, "c",
+                   "The correct answer is A. "
+                   "After cleaning the data to arrive at the observations "
+                   "with the conditions sex=='Male' and relig=='Catholic' "
+                   "(and the female counterpart), "
+                   "we see that there are 130/203 for male/female catholics. "
+                   "This sample size is large enough (>30) to use the t-test "
+                   "thanks to CLT. Also notice that the t-test assumes the "
+                   "means of the samples are normally distributed; it does "
+                   "not assume that the population (the hist() we see) is "
+                   "normally distributed."))
+    ts_sol.append((3, 3, "d",
+                   "The correct answer is A. "
+                   "After cleaning the data to arrive at the observations "
+                   "with the conditions sex=='Male' and relig=='Catholic' "
+                   "(and the female counterpart), "
+                   "we see that there are 130/203 for male/female catholics. "
+                   "This sample size is large enough (>30) to use the t-test "
+                   "thanks to CLT. Also notice that the t-test assumes the "
+                   "means of the samples are normally distributed; it does "
+                   "not assume that the population (the hist() we see) is "
+                   "normally distributed."))
+    ts_sol.append((3, 3, "e",
+                   "The correct answer is A. "
+                   "After cleaning the data to arrive at the observations "
+                   "with the conditions sex=='Male' and relig=='Catholic' "
+                   "(and the female counterpart), "
+                   "we see that there are 130/203 for male/female catholics. "
+                   "This sample size is large enough (>30) to use the t-test "
+                   "thanks to CLT. Also notice that the t-test assumes the "
+                   "means of the samples are normally distributed; it does "
+                   "not assume that the population (the hist() we see) is "
+                   "normally distributed."))
+    ts_sol.append((3, 3, "f",
+                   "The correct answer is A. "
+                   "After cleaning the data to arrive at the observations "
+                   "with the conditions sex=='Male' and relig=='Catholic' "
+                   "(and the female counterpart), "
+                   "we see that there are 130/203 for male/female catholics. "
+                   "This sample size is large enough (>30) to use the t-test "
+                   "thanks to CLT. Also notice that the t-test assumes the "
+                   "means of the samples are normally distributed; it does "
+                   "not assume that the population (the hist() we see) is "
+                   "normally distributed."))
+
+    # lab3 q4
+    ts_sol.append((3, 4, "a",
+                   "The correct answer is B. "
+                   "Since both variables are continuous, Pearson correlation "
+                   "is the best option."))
+    ts_sol.append((3, 4, "c",
+                   "The correct answer is B. "
+                   "Since both variables are continuous, Pearson correlation "
+                   "is the best option."))
+    ts_sol.append((3, 4, "d",
+                   "The correct answer is B. "
+                   "Since both variables are continuous, Pearson correlation "
+                   "is the best option."))
+    ts_sol.append((3, 4, "e",
+                   "The correct answer is B. "
+                   "Since both variables are continuous, Pearson correlation "
+                   "is the best option."))
+    ts_sol.append((3, 4, "f",
+                   "The correct answer is B. "
+                   "Since both variables are continuous, Pearson correlation "
+                   "is the best option."))
+
+    # lab3 q5
+    ts_sol.append((3, 5, "a",
+                   "The correct answer is D. "
+                   "Notice here we have two categorical variables and the "
+                   "requirements to use a Chi-Square are met so we should "
+                   "use it."))
+    ts_sol.append((3, 5, "b",
+                   "The correct answer is D. "
+                   "Notice here we have two categorical variables and the "
+                   "requirements to use a Chi-Square are met so we should "
+                   "use it."))
+    ts_sol.append((3, 5, "c",
+                   "The correct answer is D. "
+                   "Notice here we have two categorical variables and the "
+                   "requirements to use a Chi-Square are met so we should "
+                   "use it."))
+    ts_sol.append((3, 5, "e",
+                   "The correct answer is D. "
+                   "Notice here we have two categorical variables and the "
+                   "requirements to use a Chi-Square are met so we should "
+                   "use it."))
 
     return ts_sol
 
@@ -1036,5 +1329,5 @@ def write_ts_to_db(lab):
             cur.execute("INSERT INTO TS VALUES{0}".format(ts_sol[i]))
 
 if __name__ == "__main__":
-    write_mc_to_db(2)
-    write_ts_to_db(2)
+    write_mc_to_db(3)
+    write_ts_to_db(3)

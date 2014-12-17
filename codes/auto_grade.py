@@ -2,7 +2,7 @@
         @mktime:        9/25/2014
         @description:   main file to do the semi-automated grading for 203
 """
-from write_feedback import *    # NOQA
+from write_feedback import *    # NOQA (this is a pylint bug, please ignore)
 from db_connect import *        # NOQA
 from write_summary import *     # NOQA
 
@@ -169,8 +169,8 @@ def additional_comments(file_name):
 
 
 if __name__ == "__main__":
-    SECTION = 2
-    LAB = 2
+    SECTION = 1
+    LAB = 3
     GRADER = "Guang Yang (gy8@berkeley.edu)"
     S_NAME = input("Student Name: ")
     FILE_NAME = generate_file_name(SECTION, LAB, S_NAME)
