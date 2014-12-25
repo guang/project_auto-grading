@@ -2,7 +2,8 @@ Guang's Semi-automated Grader
 ====================
 
 Semi-automated grading for UC Berkeley iSchool Data Science 203 in Fall 2014.
-Comments and feedbacks are welcome at gy8@berkeley.edu
+
+Comments and feedbacks are welcome at gy [AT] berkeley [DOT] edu
 
 ## Table of Contents
 - [Overview](#overview)
@@ -35,6 +36,10 @@ of homework questions with different methods of storing feedbacks:
 
 - free response - here the feedbacks do not have to be seeded into the database before
   grading. New feedbacks are added to the database as the grader find new errors while grading.
+
+(Currently it is designed to handle 2 multiple choice sections (MC and TS) and 1 free
+response section (DA). However this can be easily modified to handle more sections of each
+case.
 
 As you run the program, it communicates with the SQLite database (add or pull
 feedbacks based on lab number, section name, question number, and the name of the error),
