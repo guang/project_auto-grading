@@ -917,88 +917,110 @@ def solution_mult_choice_lab4():
 
     """
     mc_sol = []
-    # lab1 q1
-    mc_sol.append((1, 1, 'a', "The correct answer is E. The variable is "
-                   "discrete, so it can'tbe interval"))
-    mc_sol.append((1, 1, "b", "The correct answer is E. Dichotomous variables "
-                   "are nomial with only categories or levels, which is not "
-                   "the case here"))
-    mc_sol.append((1, 1, "c", "The correct answer is E. Nominal variables "
-                   "do not impose order, however here there is indeed order "
-                   "from less to more"))
-    mc_sol.append((1, 1, "1d", "The correct answer is E. Since ratio "
-                   "variables are also continuous, it can't be the case here"))
+    # lab4 q1
+    mc_sol.append((4, 1, 'a', "The correct answer is D. "
+                   "As stated in the video lecture, ANOVA is great for "
+                   "significance testing, especially in the multivariate case. "
+                   "Here we are dealing with the overall model so this is "
+                   "not appropriate"))
+    mc_sol.append((4, 1, 'b', "The correct answer is D. "
+                   "As stated in the video lecture, ANOVA is great for "
+                   "significance testing, especially in the multivariate case. "
+                   "OLS does not compute statistical significance."))
+    mc_sol.append((4, 1, 'c', "The correct answer is D. "
+                   "As stated in the video lecture, ANOVA is great for "
+                   "significance testing, especially in the multivariate case. "
+                   "Notice here that the assumptions are not met"))
+    mc_sol.append((4, 1, 'e', "The correct answer is D. "
+                   "As stated in the video lecture, ANOVA is great for "
+                   "significance testing, especially in the multivariate case. "
+                   ""))
+    mc_sol.append((4, 1, 'f', "The correct answer is D. "
+                   "As stated in the video lecture, ANOVA is great for "
+                   "significance testing, especially in the multivariate case. "
+                   "Here we are interested in the overall model rather than "
+                   "individual variables"))
 
-    # lab1 q2
-    mc_sol.append((1, 2, "b", "The correct answer is A. Dichotomous is binary"
-                   ", not an interval variable"))
-    mc_sol.append((1, 2, "c", "The correct answer is A. This is not clear "
-                   "from just using a binary variable"))
-    mc_sol.append((1, 2, "d", "The correct answer is A. This is not clear "
-                   "from just using a binary variable"))
-    mc_sol.append((1, 2, "e", "The correct answer is A. It's not clear what's "
-                   "conceptual vs operational"))
+    # lab4 q2
+    mc_sol.append((4, 2, "a", "The correct answer is B. "
+                   "As stated in the video lecture, the null is assuming that "
+                   "every variable coefficient (so not the b0 term) is zero. "
+                   "From what we have learned about forming null hypotheses "
+                   "in the class, this makes intuitive sense as it is very "
+                   "specific and quantifiable so the criteria for rejecting "
+                   "the null is clear."))
+    mc_sol.append((4, 2, "c", "The correct answer is B. "
+                   "As stated in the video lecture, the null is assuming that "
+                   "every variable coefficient (so not the b0 term) is zero. "
+                   "From what we have learned about forming null hypotheses "
+                   "in the class, this makes intuitive sense as it is very "
+                   "specific and quantifiable so the criteria for rejecting "
+                   "the null is clear."))
+    mc_sol.append((4, 2, "d", "The correct answer is B. "
+                   "As stated in the video lecture, the null is assuming that "
+                   "every variable coefficient (so not the b0 term) is zero. "
+                   "From what we have learned about forming null hypotheses "
+                   "in the class, this makes intuitive sense as it is very "
+                   "specific and quantifiable so the criteria for rejecting "
+                   "the null is clear."))
+    mc_sol.append((4, 2, "e", "The correct answer is B. "
+                   "As stated in the video lecture, the null is assuming that "
+                   "every variable coefficient (so not the b0 term) is zero. "
+                   "From what we have learned about forming null hypotheses "
+                   "in the class, this makes intuitive sense as it is very "
+                   "specific and quantifiable so the criteria for rejecting "
+                   "the null is clear."))
 
-    # lab1 q3
-    mc_sol.append((1, 3, "a", "The correct answer is D. Not true - std "
-                   "indeed gets 'stretched' by outliers"))
-    mc_sol.append((1, 3, "b", "The correct answer is D. This was a little "
-                   "tricky - the problem here is the use of 'any population'. "
-                   "Let's demonstrate this by a counterexample. Say we have "
-                   "two distributions, X which is normal distribution with "
-                   "mean mu and standard deviation sigma, and Y which is a "
-                   "constant distribution over the support of a singleton 5. "
-                   "For X, it's clear that sampling a point from a normal "
-                   "distribution has about 68%% chance of falling within one "
-                   "standard deviation of the mean. However, since Y is a "
-                   "singleton, the mean is 5 and variance is 0. As a result, "
-                   "The chance of your sample falling within one standard "
-                   "deviation of the mean is 100%%."))
-    mc_sol.append((1, 3, "c", "The correct answer is D. Take the constant "
-                   "to be 0 and it's very clear this is wrong"))
+    # lab4 q3
+    mc_sol.append((4, 3, "a", "The correct answer is E. "
+                   "As long as there is a statistically significant "
+                   "relationship between one independent variable and the "
+                   "dependent variable we can reject the null."))
+    mc_sol.append((4, 3, "b", "The correct answer is E. "
+                   "b0 is the intercept, it does not really make sense for "
+                   "an intercept to be statistically significant"))
+    mc_sol.append((4, 3, "c", "The correct answer is E. "
+                   "As a counter example, take b2 to be not equal to 0 but "
+                   "b1 = 0. We would still reject the null"))
+    mc_sol.append((4, 3, "d", "The correct answer is E. "
+                   "Requires other information (like the goodness of fit)"))
 
-    # lab1 q4
-    mc_sol.append((1, 4, "a", "The correct answer is B. This answer doesn't "
-                   "make sense as there is no quota"))
-    mc_sol.append((1, 4, "c", "The correct answer is B. Where is the social "
-                   "network?"))
-    mc_sol.append((1, 4, "d", "The correct answer is B. You need "
-                   "probabilities to select clusters"))
-    mc_sol.append((1, 4, "e", "The correct answer is B. But the prompt said "
-                   "random"))
-    mc_sol.append((1, 4, "f", "The correct answer is B. What's systematic "
-                   "about it?"))
+    # lab4 q4
+    mc_sol.append((4, 4, "a", "The correct answer is B. "
+                   "everything seems like legitimate indicators of surviving "
+                   "in the wild - however the number of pushups in 3 minutes "
+                   "should intuitively be highly correlated/collinear with "
+                   "the triceps strength (X2)."))
+    mc_sol.append((4, 4, "c", "The correct answer is B. "
+                   "everything seems like legitimate indicators of surviving "
+                   "in the wild - however the number of pushups in 3 minutes "
+                   "should intuitively be highly correlated/collinear with "
+                   "the triceps strength (X2)."))
+    mc_sol.append((4, 4, "d", "The correct answer is B. "
+                   "everything seems like legitimate indicators of surviving "
+                   "in the wild - however the number of pushups in 3 minutes "
+                   "should intuitively be highly correlated/collinear with "
+                   "the triceps strength (X2)."))
+    mc_sol.append((4, 4, "e", "The correct answer is B. "
+                   "everything seems like legitimate indicators of surviving "
+                   "in the wild - however the number of pushups in 3 minutes "
+                   "should intuitively be highly correlated/collinear with "
+                   "the triceps strength (X2)."))
 
-    # lab1 q5
-    mc_sol.append((1, 5, "a", "The correct answer is C. "
-                   "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
-                   "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
-                   "s P((X-50)/sigma > (70-50)/sigma), which is P(Z>(20/sigma)"
-                   " which is then 1 - phi(20/sigma), where phi is the cdf of "
-                   "the standard normal."
-                   "Similarly if we let Y be 1/100 sum(X_j), j from 1 to 100 "
-                   "we have then Y ~ N(50,sigma^2/100 and follow the above "
-                   "calculations we arrive at the same answer"))
-    mc_sol.append((1, 5, "b", "The correct answer is C. "
-                   "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
-                   "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
-                   "s P((X-50)/sigma > (70-50)/sigma), which is P(Z>(20/sigma)"
-                   " which is then 1 - phi(20/sigma), where phi is the cdf of "
-                   "the standard normal."
-                   "Similarly if we let Y be 1/100 sum(X_j), j from 1 to 100 "
-                   "we have then Y ~ N(50,sigma^2/100 and follow the above "
-                   "calculations we arrive at the same answer"))
-    mc_sol.append((1, 5, "d", "The correct answer is C. "
-                   "If we let X ~ N(50,sigma^2), we see that P(X>70) can be "
-                   "expressed using Z = (X-50)/sigma. So P(X>70) is the same a"
-                   "s P((X-50)/sigma > (70-50)/sigma), which is P(Z>(20/sigma)"
-                   " which is then 1 - phi(20/sigma), where phi is the cdf of "
-                   "the standard normal."
-                   "Similarly if we let Y be 1/100 sum(X_j), j from 1 to 100 "
-                   "we have then Y ~ N(50,sigma^2/100 and follow the above "
-                   "calculations we arrive at the same answer"))
+    # lab4 q5
+    mc_sol.append((4, 5, "a", "The correct answer is D. "
+                   "Notice that here you are controlling the experiment"))
+    mc_sol.append((4, 5, "b", "The correct answer is D. "
+                   "Notice that here you are manipulating the situation by "
+                   "giving questionnaires."))
+    mc_sol.append((4, 5, "c", "The correct answer is D. "
+                   "Notice that here you are manipulating the situation by"
+                   "giving questionnaires"))
+    mc_sol.append((4, 5, "e", "The correct answer is D. "
+                   "This is not a good design for the research question at "
+                   "hand because location will convolute the results"))
 
-    # lab1 q6
+    # lab4 q6
     mc_sol.append((1, 6, "a", "The correct answer is B. "
                    "This is law of large numbers"))
     mc_sol.append((1, 6, "c", "The correct answer is B. "
@@ -1007,7 +1029,7 @@ def solution_mult_choice_lab4():
     mc_sol.append((1, 6, "d", "The correct answer is B. "
                    "Not the central limit theorem"))
 
-    # q7
+    # lab4 q7
     mc_sol.append((1, 7, "7b", "The correct answer is A. "
                    "Standard error of the mean is defined as s/sqrt(n) where n "
                    "is the sample size. So it will get smaller"))
@@ -1020,7 +1042,7 @@ def solution_mult_choice_lab4():
     mc_sol.append((1, 7, "7f", "The correct answer is A. "
                    ""))
 
-    # q8
+    # lab4 q8
     mc_sol.append((1, 8, "a", "The correct answer is D. "
                    "All three statistics are 30"))
     mc_sol.append((1, 8, "b", "The correct answer is D. "
@@ -1030,7 +1052,7 @@ def solution_mult_choice_lab4():
     mc_sol.append((1, 8, "e", "The correct answer is D. "
                    "There's no errors so sure it's 0"))
 
-    # q9
+    # lab4 q9
     mc_sol.append((1, 9, "a", "The correct answer is B. "
                    "Using Bayes theorem we can write P(H|A) = P(H) * P(A|H)/"
                    "P(A) Now we know that P(H)=0.01 (given), P(A|H)=1 (trick "
@@ -1267,21 +1289,93 @@ def solution_test_selection_lab4():
 
     """
     ts_sol = []
-    # lab2 q1
-    ts_sol.append((2, 1, 'a', "The correct answer is B."
-                   "Here we want to assess the equality of variances, which is "
-                   "exactly what Levenes does."))
-    ts_sol.append((2, 1, 'c', "The correct answer is B."
-                   "Here we want to assess the equality of variances, which is "
-                   "exactly what Levenes does."))
+    # lab4 q1
+    ts_sol.append((4, 1, 'b', "The correct answer is A."
+                   "Since it is categorical data we are dealing with here, "
+                   "chi-square is the best way to go."))
+    ts_sol.append((4, 1, 'c', "The correct answer is A."
+                   "Since it is categorical data we are dealing with here, "
+                   "chi-square is the best way to go."))
+    ts_sol.append((4, 1, 'd', "The correct answer is A."
+                   "Since it is categorical data we are dealing with here, "
+                   "chi-square is the best way to go."))
 
-    # lab2 q2
-    ts_sol.append((2, 2, "b", "The correct answer is A. "
-                   "This is used to determine whether a given set of data "
-                   "follows a normal distribution"))
-    ts_sol.append((2, 2, "c", "The correct answer is A. "
-                   "This is used to determine whether a given set of data "
-                   "follows a normal distribution"))
+    # lab4 q2
+    ts_sol.append((4, 2, "a", "The correct answer is D. "
+                   "Note that region has more than two categories, so all the "
+                   "other tests do not really work."))
+    ts_sol.append((4, 2, "b", "The correct answer is D. "
+                   "Note that region has more than two categories, so all the "
+                   "other tests do not really work."))
+    ts_sol.append((4, 2, "c", "The correct answer is D. "
+                   "Note that region has more than two categories, so all the "
+                   "other tests do not really work."))
+
+    # lab4 q3
+    ts_sol.append((4, 3, "a", "The correct answer is B. "
+                   "Notice that the sample size is big enough that we can "
+                   "invoke CLT for normality assumptions. Choice A is too "
+                   "restricting."))
+    ts_sol.append((4, 3, "c", "The correct answer is B. "
+                   "Notice that the sample size is big enough that we can "
+                   "invoke CLT for normality assumptions. We do not really "
+                   "have dependent samples for choice C"))
+    ts_sol.append((4, 3, "d", "The correct answer is B. "
+                   "Notice that the sample size is big enough that we can "
+                   "invoke CLT for normality assumptions. Choice D does not "
+                   "make much sense as there is only one independent "
+                   "variable."))
+
+    # lab4 q4
+    ts_sol.append((4, 4, "a", "The correct answer is B. "
+                   "Here we are dealing with more than two categories so "
+                   "certainly not choice C nor D. ANOVA is preferred over "
+                   "chi-square because the adults in household variable "
+                   "is ordinal."))
+    ts_sol.append((4, 4, "c", "The correct answer is B. "
+                   "Here we are dealing with more than two categories so "
+                   "certainly not choice C nor D. ANOVA is preferred over "
+                   "chi-square because the adults in household variable "
+                   "is ordinal."))
+    ts_sol.append((4, 4, "d", "The correct answer is B. "
+                   "Here we are dealing with more than two categories so "
+                   "certainly not choice C nor D. ANOVA is preferred over "
+                   "chi-square because the adults in household variable "
+                   "is ordinal."))
+
+    # lab4 q5
+    ts_sol.append((4, 5, "b", "The correct answer is A. "
+                   "Notice that both variables are metric and the sample size "
+                   "is big enough for meeting normality assumptions that "
+                   "Pearson correlation is best for measuring their "
+                   "relationship."))
+    ts_sol.append((4, 5, "c", "The correct answer is A. "
+                   "Notice that both variables are metric and the sample size "
+                   "is big enough for meeting normality assumptions that "
+                   "Pearson correlation is best for measuring their "
+                   "relationship."))
+    ts_sol.append((4, 5, "d", "The correct answer is A. "
+                   "Notice that both variables are metric and the sample size "
+                   "is big enough for meeting normality assumptions that "
+                   "Pearson correlation is best for measuring their "
+                   "relationship."))
+
+    # lab4 q6
+    ts_sol.append((4, 6, "a", "The correct answer is B. "
+                   "Because of the rather small size, we cannot rely on CLT "
+                   "for the normality assumptions. Thus a non-parametric test "
+                   "like Wilcoxon Rank-Sum Test is best here to compare a "
+                   "rankable metric variable in two independent groups."))
+    ts_sol.append((4, 6, "a", "The correct answer is B. "
+                   "Because of the rather small size, we cannot rely on CLT "
+                   "for the normality assumptions. Thus a non-parametric test "
+                   "like Wilcoxon Rank-Sum Test is best here to compare a "
+                   "rankable metric variable in two independent groups."))
+    ts_sol.append((4, 6, "a", "The correct answer is B. "
+                   "Because of the rather small size, we cannot rely on CLT "
+                   "for the normality assumptions. Thus a non-parametric test "
+                   "like Wilcoxon Rank-Sum Test is best here to compare a "
+                   "rankable metric variable in two independent groups."))
 
     return ts_sol
 

@@ -12,3 +12,4 @@ __pycache__
 *.docx
 *.db
 *.pyc
+codes/db_seed.py
